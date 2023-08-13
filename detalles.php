@@ -17,7 +17,7 @@
             $sql->execute([$id]);
 
             if($sql->fetchColumn() > 0){
-                $sql = $con->prepare("SELECT nombre,descripcion,precio,descuento,imagen FROM productos WHERE id=? AND activo=1 LIMIT 1");
+                $sql = $con->prepare("SELECT nombre,descripcion,precio,descuento FROM productos WHERE id=? AND activo=1 LIMIT 1");
                 $sql ->execute([$id]);
                 $row = $sql->fetch(PDO::FETCH_ASSOC);
 
@@ -25,18 +25,17 @@
                 $descripcion = $row['descripcion'];
                 $precio = $row['precio'];
                 $descuento = $row['descuento'];
-                $archivo_img = $row['imagen'];
                 $precio_desc = $precio - (($precio * $descuento)/100);
 
                 $imagenes_dir = 'images/productos/'.$id.'/';
-                $rutaimg = $imagenes_dir . $archivo_img;
+                $rutaimg = $imagenes_dir . 'principal.jpg';
 
                 $imagenes = array();
 
                 $dir = dir($imagenes_dir);
 
                 while(($archivo = $dir->read()) != false){
-                    if($archivo != $archivo_img && (strpos($archivo, 'jpg') || strpos($archivo, 'jpeg'))){
+                    if($archivo != 'principal.jpg' && (strpos($archivo, 'jpg') || strpos($archivo, 'jpeg'))){
                         $imagenes[] = $imagenes_dir . $archivo;
                     }
                 }

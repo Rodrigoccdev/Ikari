@@ -33,10 +33,6 @@
 </head>
 <body>
     <?php if(isset($_SESSION['user_id'])){ ?>
-    <a href="/ikari/"><header>
-        <p>Entrega a todo AGUASCALIENTES</p>
-    </header></a>
-    
     <?php include("menu.php") ?>
 
     <section class="container">

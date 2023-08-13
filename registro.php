@@ -36,7 +36,7 @@
         }
 
         if(count($errors) == 0){
-            $id = registrarCliente([$nombres, $apellidos, $email],$con);
+            $id = registrarCliente([$nombres, $apellidos, $email], $con);
             
             if($id >0 ){
                 $pass_hash = password_hash($password, PASSWORD_DEFAULT);
@@ -68,27 +68,27 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 </head>
 <body>
-    <a href="/ikari/">
+    <a href="/">
         <header><p>Entrega a todo AGUASCALIENTES</p></header>
     </a>
     <nav>
         <input type="checkbox" name="" id="check">
         <label for="check" class="checkbtn">
-            <img src="https://img.uxwing.com/wp-content/themes/uxwing/download/web-app-development/hamburger-menu-icon.png" alt="" class="menu" height="50px">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/2048px-Hamburger_icon.svg.png" alt="" class="menu" height="50px">
         </label>
-        <a href="/ikari/" class="enlace">
+        <a href="/" class="enlace">
             <img src="images/logoIkari.jpg" height="50px">
         </a>
-        <a href="carrito.php" class="menu">
+        <a href="/carrito" class="menu">
             <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png" alt="" height="30px">
             <span id="num_cart" class=""><?php echo $num_cart ?></span>
         </a>
         <ul class="list">
             <li id="x" class="op"><a href=""><label for="check">X</label></a></li>
-            <li class="op"><a href="/ikari/">Home</a></li>
-            <li class="op"><a href="/ikari/">Informacion</a></li>
-            <li class="op"><a href="/ikari/tienda.php">Camisas</a></li>
-            <li class="op"><a href="/ikari/">Contacto</a></li>
+            <li class="op"><a href="/">Home</a></li>
+            <li class="op"><a href="/">Informacion</a></li>
+            <li class="op"><a href="/tienda">Camisas</a></li>
+            <li class="op"><a href="/">Contacto</a></li>
         </ul>
     </nav>    
     <section>

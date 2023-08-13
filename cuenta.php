@@ -17,7 +17,7 @@
 </head>
 <body>
     <?php if(isset($_SESSION['user_id'])){ ?>
-    <a href="/ikari/">
+    <a href="/">
         <header><p>Entrega a todo AGUASCALIENTES</p></header>
     </a>
     <nav>
@@ -25,36 +25,36 @@
         <label for="check" class="checkbtn">
             <img src="https://img.uxwing.com/wp-content/themes/uxwing/download/web-app-development/hamburger-menu-icon.png" alt="" class="menu" height="50px">
         </label>
-        <a href="/ikari/" class="enlace">
+        <a href="/" class="enlace">
             <img src="images/logoIkari.jpg" height="50px">
         </a>
-        <a href="carrito.php" class="menu">
+        <a href="/carrito" class="menu">
             <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png" alt="" height="30px">
             <span id="num_cart" class=""><?php echo $num_cart ?></span>
         </a>
         <?php if(isset($_SESSION['user_name'])){ ?>
-            <a href="cuenta.php" class="menu" style="padding:5px; text-align: center">
+            <a href="/cuenta" class="menu" style="padding:5px; text-align: center">
                 <img src="https://img.freepik.com/free-icon/user_318-286823.jpg" alt="" height="30px">
                 <p><?php echo $_SESSION['user_name'] ?></p>
             </a>
             <?php }else{ ?>
-            <a href="login.php" class="menu" style="text-align: center;">
+            <a href="/login" class="menu" style="text-align: center;">
                 <img src="https://img.freepik.com/free-icon/user_318-286823.jpg" alt="" height="30px">
             </a>
         <?php } ?>
         <ul class="list">
             <li id="x" class="op"><a href=""><label for="check">X</label></a></li>
-            <li class="op"><a href="/ikari/">Home</a></li>
-            <li class="op"><a href="/ikari/">Informacion</a></li>
-            <li class="op"><a href="/ikari/tienda.php">Camisas</a></li>
-            <li class="op"><a href="/ikari/">Contacto</a></li>
+            <li class="op"><a href="/">Home</a></li>
+            <li class="op"><a href="/">Informacion</a></li>
+            <li class="op"><a href="/tienda">Camisas</a></li>
+            <li class="op"><a href="/">Contacto</a></li>
         </ul>
     </nav>
     <section class="cuenta">
         <a href="logout.php" class="btn">Cerrar Sesion</a>
     </section>
     <?php }else{ 
-        header("Location: index.php");
+        header("Location: /");
     }?>
 </body>
 </html>

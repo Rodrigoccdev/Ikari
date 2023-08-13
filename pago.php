@@ -104,7 +104,7 @@
                 })
             },
             onApprove: function(data, actions){
-                let URL = 'clases/captura.php'
+                let URL = '/clases/captura.php'
                 actions.order.capture().then(function(detalles){
                     console.log(detalles)
                     //window.location.href="gracias.php";

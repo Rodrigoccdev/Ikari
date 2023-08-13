@@ -39,7 +39,7 @@
                 <tbody>
                     <?php if($lista_carrito == null){
                         echo '<tr><td><b>Su carrito esta vacio</b></td></tr><br>
-                            <tr><td><a href="/ikari/tienda.php"><button class="btn">Regresar a tienda</button></a></td></tr>';
+                            <tr><td><a href="/tienda"><button class="btn">Regresar a tienda</button></a></td></tr>';
                     }else{?>
                 <thead>
                     <tr>
@@ -89,11 +89,11 @@
         <div></div>
         <?php if(isset($_SESSION['user_cliente'])){ ?>
         <div class="pago">
-            <a href="pago.php"><button class="btnP">Realizar Pago</button></a>
+            <a href="/pago"><button class="btnP">Realizar Pago</button></a>
         </div>
         <?php }else{ ?>
         <div class="pago">
-            <a href="login.php?pago"><button class="btnP">Realizar Pago</button></a>
+            <a href="/login?pago"><button class="btnP">Realizar Pago</button></a>
         </div>
         <?php } ?>
     </section>
@@ -134,7 +134,7 @@
             let btnElimina = document.getElementById("btn-elimina");
             let id = btnElimina.value;
 
-            let url = '/ikari/clases/actualizar_carrito.php';
+            let url = '/clases/actualizar_carrito.php';
             let formData = new FormData();
             formData.append('id', id);
             formData.append('action', 'eliminar');
@@ -163,7 +163,7 @@
     </script>
     <script>
         function actualizarCantidad(cantidad,id){
-            let url = '/ikari/clases/actualizar_carrito.php';
+            let url = '/clases/actualizar_carrito.php';
             let formData = new FormData();
             formData.append('id', id);
             formData.append('cantidad', cantidad);
